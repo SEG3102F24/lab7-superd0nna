@@ -1,33 +1,17 @@
-<div class="author-container">
-    <h2>Find an Author</h2>
-  
-    <form (ngSubmit)="fetchAuthor()" #authorForm="ngForm" novalidate>
-      <div class="form-group">
-        <label for="authorId">Author ID:</label>
-        <input
-          type="number"
-          id="authorId"
-          class="form-control"
-          [(ngModel)]="authorId"
-          name="authorId"
-          required
-          #authorIdInput="ngModel"
-        />
-        <div *ngIf="authorIdInput.invalid && authorIdInput.touched" class="error">
-          Author ID is required.
-        </div>
-      </div>
-  
-      <button type="submit" [disabled]="!authorForm.form.valid">Submit</button>
-    </form>
-  
-    <div *ngIf="author" class="author-info">
-      <h3>Author Information</h3>
-      <p><strong>First Name:</strong> {{ author.firstName }}</p>
-      <p><strong>Last Name:</strong> {{ author.lastName }}</p>
+<div>
+    <h2>Search for an Author</h2>
+    <div>
+      <label for="id">Author Id:</label>
+      <input type="text" #authorQuery id="id">
+      <button (click)="submit(authorQuery.value)">Search</button>
+    </div>
+    
+    <!-- Display error msg if the input is empty -->
+    <div *ngIf="errorMessage" class="error-message" style="color: red;">
+      <p>{{ errorMessage }}</p>
     </div>
   
-    <div *ngIf="errorMessage" class="error-message">
-      <p>{{ errorMessage }}</p>
+    <div class="container">
+      <router-outlet></router-outlet>
     </div>
   </div>
