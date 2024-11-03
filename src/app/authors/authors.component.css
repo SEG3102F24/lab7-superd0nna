@@ -1,0 +1,29 @@
+.author-container {
+    padding: 20px;
+  }
+  
+  .form-group {
+    margin: 10px 0;
+  }
+  
+  .error {
+    color: red;
+    padding-top: 1em;
+    font-size: 12px;
+  }
+  
+  .error-message p {
+    color: red;
+    font-weight: bold;
+    margin-top: 20px;
+  }
+  
+  .author-info {
+    margin-top: 20px;
+  }
+  
+  button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
